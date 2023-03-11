@@ -1,0 +1,67 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+  #slider2{
+    background-image: url(xd.jpg);
+    background-size: cover;
+    background-position-x: center;
+    display: flex;
+    height: 1000px;
+    width: 100%;
+    background-repeat:no-repeat;
+    z-index: -1;
+  }
+#upit{
+    width: 35%;
+	border: 10px solid #ffffff9a;
+    margin: 0 auto;
+    margin-top: 15%;
+    margin-bottom: 15%;
+	color: #fff;
+    text-align: center;
+    box-shadow: 10px 10px 15px 12px rgb(0, 0, 0);
+}
+
+#home{
+    margin: 0 auto;
+    background-color: #ffffff;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    width: 20%;
+    border-radius: 15px;
+}
+#home a{
+    display: block;
+    text-decoration: none;
+}
+
+#form{
+    text-align: center;
+    padding: 20px;
+}
+#name{
+    text-align: center;
+    width: 80%;
+    height: 50px;
+    margin: 10px;
+}
+#email{
+    text-align: center;
+    width: 80%;
+    height: 50px;
+    margin: 10px;
+}
+#message{
+    text-align: center;
+    width: 80%;
+    height: 100px;
+}
+#submit{
+    width: 30%;
+    height: 30px;
+    margin: 10px;
+}

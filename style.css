@@ -1,0 +1,206 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+#navigacija{
+    width: 100%;
+    text-align: center;
+    background:#044b0d80;
+    padding: 20px 0px;
+    position: fixed; 
+    margin-top: 0px;
+    height: 50px;
+    font-family: 'Play', sans-serif;
+}
+#navigacija ul li a{
+    margin: 0px 40px;
+    color: #ffffff;
+    font-size: 1em;
+    text-decoration:none;
+    transition: 0.5s;
+}
+#navigacija ul li a:hover{
+    color: #000000;
+}
+
+
+#navigacija ul li{
+    display: inline;
+}
+.drop{
+    position: relative;
+    display: inline-block;
+  }
+.button{
+    background-color: #044b0d80;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+.linkovi{
+    display: none;
+    position: absolute;
+    background-color: #000000;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.linkovi a{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+.linkovi a:hover{
+    background-color: #9843dd88;
+    transition: 2s;
+}
+.drop:hover .linkovi{
+    display: block;
+}
+.drop:hover .button{
+    background-color: #0bbb058e;
+    transition: 0.5s;
+}
+
+#slider{
+    background-image: url(slider.jpg);
+    background-size: cover;
+    background-position-x: center;
+    display: flex;
+    height: 800px;
+    width: 100%;
+    background-repeat:no-repeat;
+} 
+h1{
+	width: 35%;
+	border: 10px solid #ffffff9a;
+	margin: 0px auto;
+    margin-top: 15%;
+    margin-bottom: 15%;
+	color: #fff;
+	font-size: 70px;
+    text-align: center;
+	letter-spacing: 20px;
+    padding-top: 15px;
+    padding-left: 10px;
+    box-shadow: 10px 10px 15px 12px rgb(0, 0, 0);
+}
+#about{
+    text-align: center;
+    padding: 20px;
+    font-size: 50px;
+}
+
+body {
+    background-color: rgb(255, 255, 255);
+    margin:0;
+    overflow-x:hidden;
+}
+html {
+    scroll-behavior: smooth;
+  }
+.info{
+    width: 100%;
+    height: 500px;
+}
+#kontejner{
+    margin-left: 15%;
+    margin-right: 15%;
+    display: inline-flex;
+}
+
+.block{
+    padding:20px;
+    margin: 50px;
+    width: 300px;
+    text-align:center;
+    box-shadow: 10px 10px 15px 12px rgba(0, 0, 0, 0.377);
+    font-family: calibri;
+}
+.block h2{
+    margin-bottom: 20px;
+}
+#slider2{
+    background-image: url(xd.jpg);
+    background-size: cover;
+    background-position-x: center;
+    height: 2075px;
+    width: 100%;
+    background-repeat:no-repeat;
+    position: sticky;
+    z-index: -1;
+}
+#aloe,#echeveria, #jade, #nom, #cactus{
+    width: 100%;
+    height: 300px;
+    margin-top: 100px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0px 8px 16px 8px rgba(117, 21, 196, 0.418);
+}
+
+#kontejner2{
+    margin-right: 15%;
+    margin-left: 15%;
+    padding-top: 1px;
+}
+.plants{
+    display: inline-flex;
+    text-align: left;
+}
+.text{
+    padding: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: large;
+}
+.centar{
+    width:75%;
+    margin:0px auto;
+    padding:10px 5px;
+    display:flex;
+    justify-content:space-between;
+}
+
+.footer{
+    background:#000;
+    padding:30px 0px;
+    font-family: 'Play', sans-serif;
+    text-align:center;
+}
+    
+.footer .red{
+    width:100%;
+    margin:1% 0%;
+    padding:0.6% 0%;
+    color:gray;
+    font-size:0.8em;
+}
+
+.footer .red a{
+    text-decoration:none;
+    color:gray;
+    transition:0.5s;
+}
+
+.footer .red a:hover{
+    color:#fff;
+}
+
+.footer .red ul{
+    width:100%;
+}
+
+.footer .red ul li{
+    display:inline-block;
+    margin:0px 30px;
+}
+
+.footer .red a i{
+    font-size:2em;
+    margin:0% 1%;
+}
