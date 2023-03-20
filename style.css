@@ -76,15 +76,15 @@
     background-repeat:no-repeat;
 } 
 h1{
-	width: 35%;
-	border: 10px solid #ffffff9a;
-	margin: 0px auto;
+    width: 35%;
+    border: 10px solid #ffffff9a;
+    margin: 0px auto;
     margin-top: 15%;
     margin-bottom: 15%;
-	color: #fff;
-	font-size: 70px;
+    color: #fff;
+    font-size: 60px;
     text-align: center;
-	letter-spacing: 20px;
+    letter-spacing: 15px;
     padding-top: 15px;
     padding-left: 10px;
     box-shadow: 10px 10px 15px 12px rgb(0, 0, 0);
@@ -108,14 +108,16 @@ html {
     height: 500px;
 }
 #kontejner{
-    margin-left: 15%;
-    margin-right: 15%;
-    display: inline-flex;
+   justify-content:space-between;
+    display: flex;
+    margin-left: 10%;
+    margin-right: 10%;
+}
 }
 
 .block{
     padding:20px;
-    margin: 50px;
+    margin: 10px;
     width: 300px;
     text-align:center;
     box-shadow: 10px 10px 15px 12px rgba(0, 0, 0, 0.377);
