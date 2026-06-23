@@ -1,7 +1,7 @@
 /* ===== BASE ===== */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
-body { background: #080010; font-family: 'Inter', sans-serif; color: #F1F5F9; overflow-x: hidden; }
+body { background: #080010 !important; font-family: 'Inter', sans-serif; color: #F1F5F9; overflow-x: hidden; color-scheme: dark; }
 
 /* ===== PURPLE ORB AMBIENCE ===== */
 body::before {
