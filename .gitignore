@@ -1,0 +1,25 @@
+# Dev tooling
+.claude/
+plan.md
+node_modules/
+
+# Orion full source & DB dump (not needed by portfolio)
+Assets/Orion/Orion-test-branch/
+Assets/Orion/MySQL_Orion_MAX.sql
+
+# Virtual Garden source (screenshots are kept)
+Assets/Virtual garden/css/
+Assets/Virtual garden/images/
+Assets/Virtual garden/php/
+Assets/Virtual garden/index.html
+Assets/Virtual garden/about.html
+
+# Thesis documents (screenshot is kept)
+Assets/Thesis/Maksimilian_Popovic_186_21_Zavrsni_Rad.pdf
+Assets/Thesis/Odbrana (1).pptx
+
+# Misc
+Assets/inspiration1.png
+Assets/inspiration2.png
+Assets/social.txt
+Assets/Home_Assignment – Generalist Technical Artist (1).pdf

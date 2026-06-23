@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maksimilian Popovic — Technical Artist & Engineer</title>
+  <meta name="description" content="Portfolio of Maksimilian Popovic — Network Engineer, Full-Stack Developer, and Technical Artist. Three.js games, ISP infrastructure, security research." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            dark: '#080010',
+            surface: '#12002A',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Stars background -->
+  <div id="stars"></div>
+
+  <!-- ==============================
+       NAVBAR
+  ============================== -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="#hero" class="font-mono text-2xl font-black text-purple-400 hover:text-purple-300 transition-colors tracking-tight">MP</a>
+
+      <!-- Desktop links -->
+      <div class="hidden md:flex items-center gap-7">
+        <a href="#about"      class="text-sm text-slate-400 hover:text-purple-400 transition-colors font-medium">About</a>
+        <a href="#skills"     class="text-sm text-slate-400 hover:text-purple-400 transition-colors font-medium">Skills</a>
+        <a href="#experience" class="text-sm text-slate-400 hover:text-purple-400 transition-colors font-medium">Experience</a>
+        <a href="#projects"   class="text-sm text-slate-400 hover:text-purple-400 transition-colors font-medium">Projects</a>
+        <a href="#education"  class="text-sm text-slate-400 hover:text-purple-400 transition-colors font-medium">Education</a>
+        <a href="#contact"    class="text-sm text-slate-400 hover:text-purple-400 transition-colors font-medium">Contact</a>
+        <a href="Assets/Maksimilian.pdf" download
+           class="px-4 py-2 bg-purple-500 hover:bg-purple-400 text-white text-sm font-semibold rounded-full transition-all glow-btn">
+          <i class="fas fa-download mr-1.5"></i>Download CV
+        </a>
+      </div>
+
+      <!-- Mobile hamburger -->
+      <button id="hamburger" class="md:hidden text-slate-400 hover:text-purple-400 transition-colors">
+        <i class="fas fa-bars text-xl"></i>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden mobile-menu-panel border-t border-purple-950">
+      <div class="px-6 py-5 flex flex-col gap-4">
+        <a href="#about"      class="mobile-link text-slate-300 hover:text-purple-400 transition-colors font-medium">About</a>
+        <a href="#skills"     class="mobile-link text-slate-300 hover:text-purple-400 transition-colors font-medium">Skills</a>
+        <a href="#experience" class="mobile-link text-slate-300 hover:text-purple-400 transition-colors font-medium">Experience</a>
+        <a href="#projects"   class="mobile-link text-slate-300 hover:text-purple-400 transition-colors font-medium">Projects</a>
+        <a href="#education"  class="mobile-link text-slate-300 hover:text-purple-400 transition-colors font-medium">Education</a>
+        <a href="#contact"    class="mobile-link text-slate-300 hover:text-purple-400 transition-colors font-medium">Contact</a>
+        <a href="Assets/Maksimilian.pdf" download
+           class="w-fit px-4 py-2 bg-purple-500 text-white text-sm font-semibold rounded-full">
+          <i class="fas fa-download mr-1.5"></i>Download CV
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==============================
+       HERO
+  ============================== -->
+  <section id="hero" class="min-h-screen flex items-center pt-24 pb-16">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-14 items-center w-full">
+
+      <!-- Left column -->
+      <div>
+        <p class="font-mono text-purple-400 text-sm tracking-widest mb-5">
+          &lt; Technical Artist &amp; Developer /&gt;
+        </p>
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-black text-white leading-none mb-5">
+          Maksimilian<br /><span class="text-purple-400">Popovic</span>
+        </h1>
+
+        <!-- Typing role -->
+        <div class="flex items-center gap-2 mb-7 h-9">
+          <span class="text-slate-400 text-lg">I'm a</span>
+          <span id="typed-role" class="text-purple-400 text-lg font-bold font-mono min-w-[10ch]"></span><span class="typed-cursor text-purple-400 text-lg font-mono">|</span>
+        </div>
+
+        <p class="text-slate-400 text-lg leading-relaxed mb-9 max-w-lg">
+          Network Engineer and Full-Stack Developer who crossed into creative-technical territory — building 3D web games with Three.js, designing in Blender and Photoshop, and deploying on real infrastructure. Where systems thinking meets creative execution.
+        </p>
+
+        <!-- CTAs -->
+        <div class="flex flex-wrap gap-4 mb-10">
+          <a href="#projects"
+             class="px-6 py-3 bg-purple-500 hover:bg-purple-400 text-white font-semibold rounded-full transition-all glow-btn">
+            View Projects
+          </a>
+          <a href="Assets/Maksimilian.pdf" download
+             class="px-6 py-3 border border-purple-500/50 hover:border-purple-400 text-purple-400 hover:text-purple-300 font-semibold rounded-full transition-all">
+            <i class="fas fa-download mr-2"></i>Download CV
+          </a>
+        </div>
+
+        <!-- Social -->
+        <div class="flex gap-5">
+          <a href="https://www.linkedin.com/in/maksimilian-popovic-871b9022a/" target="_blank" rel="noopener"
+             class="text-slate-500 hover:text-purple-400 transition-colors text-xl" aria-label="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="https://github.com/maksimivian" target="_blank" rel="noopener"
+             class="text-slate-500 hover:text-purple-400 transition-colors text-xl" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="mailto:maximilian.popovic@gmail.com"
+             class="text-slate-500 hover:text-purple-400 transition-colors text-xl" aria-label="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right column: Terminal -->
+      <div class="terminal-card overflow-hidden" data-aos="fade-left" data-aos-delay="200">
+        <!-- Title bar -->
+        <div class="flex items-center gap-2 px-4 py-3 border-b border-purple-900/40">
+          <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
+          <span class="w-3 h-3 rounded-full bg-yellow-400/80"></span>
+          <span class="w-3 h-3 rounded-full bg-green-500/80"></span>
+          <span class="font-mono text-xs text-slate-500 ml-2">bash — maksimilian@portfolio:~</span>
+        </div>
+        <!-- Terminal body -->
+        <div class="p-6 font-mono text-sm leading-7 min-h-72">
+          <div class="terminal-line"><span class="text-purple-400">$ </span><span class="text-slate-200">whoami</span></div>
+          <div class="terminal-line text-slate-400">maksimilian-popovic</div>
+          <div class="terminal-line mt-1"><span class="text-purple-400">$ </span><span class="text-slate-200">cat skills.txt</span></div>
+          <div class="terminal-line text-green-400/90">&nbsp;&nbsp;→ Three.js · Vite · PHP · Python · JavaScript</div>
+          <div class="terminal-line text-green-400/90">&nbsp;&nbsp;→ Cisco ASR9000 · GPON · VMware · AWS · Linux</div>
+          <div class="terminal-line text-green-400/90">&nbsp;&nbsp;→ Blender · Photoshop · UI/UX · WebGL</div>
+          <div class="terminal-line mt-1"><span class="text-purple-400">$ </span><span class="text-slate-200">systemctl status career</span></div>
+          <div class="terminal-line"><span class="text-green-400">●</span> <span class="text-white">career.service</span> <span class="text-slate-500">— Technical Artist</span></div>
+          <div class="terminal-line text-slate-400">&nbsp;&nbsp;&nbsp;Active: <span class="text-green-400">seeking</span> ● (running since 4+ yrs)</div>
+          <div class="terminal-line text-slate-400">&nbsp;&nbsp;&nbsp;Status: EU Citizen · Belgrade · Remote-ready</div>
+          <div class="terminal-line mt-1"><span class="text-purple-400">$ </span><span class="text-slate-200">ping sett.ai</span></div>
+          <div class="terminal-line text-slate-400">PING sett.ai: 64 bytes · ttl=64 · time=0.001ms</div>
+          <div class="terminal-line text-purple-400">Reply: I'm ready. <span class="terminal-blink">▋</span></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==============================
+       ABOUT
+  ============================== -->
+  <section id="about" class="py-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <div data-aos="fade-up">
+        <span class="font-mono text-purple-400 text-sm tracking-widest">// 01. ABOUT</span>
+        <h2 class="text-4xl font-black text-white mt-2 mb-12">Who I Am</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-12 items-start">
+        <!-- Text -->
+        <div data-aos="fade-right">
+          <p class="text-slate-300 text-lg leading-relaxed mb-6">
+            I'm a network engineer and full-stack developer who crossed into creative-technical territory — building web-based 3D games with Three.js, crafting assets in Blender and Photoshop, and deploying everything on real infrastructure. I've spent years managing large-scale ISP networks at Orion Telekom (Cisco ASR9000, GPON, VoIP/IPTV) and shipping production software, but I'm equally at home fine-tuning animation easing curves and iterating on game feel.
+          </p>
+          <p class="text-slate-300 text-lg leading-relaxed mb-8">
+            Currently pursuing an MSc in Network and Computer Technologies at ATUSS Belgrade. CCNA certification in progress. EU Citizen based in Serbia — open to remote and relocation.
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <span class="about-pill">🇪🇺 EU Citizen</span>
+            <span class="about-pill">📡 CCNA In Progress</span>
+            <span class="about-pill">🎓 MSc Student</span>
+            <span class="about-pill">🌍 Open to Remote</span>
+            <span class="about-pill">📍 Belgrade, Serbia</span>
+          </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="grid grid-cols-2 gap-5" data-aos="fade-left">
+          <div class="glass-card p-6 text-center stat-card">
+            <div class="text-4xl font-black text-purple-400 mb-2">4+</div>
+            <div class="text-slate-400 text-sm">Years Professional Experience</div>
+          </div>
+          <div class="glass-card p-6 text-center stat-card">
+            <div class="text-4xl font-black text-purple-400 mb-2">15+</div>
+            <div class="text-slate-400 text-sm">Technologies Mastered</div>
+          </div>
+          <div class="glass-card p-6 text-center stat-card">
+            <div class="text-4xl font-black text-purple-400 mb-2">5+</div>
+            <div class="text-slate-400 text-sm">Projects Shipped</div>
+          </div>
+          <div class="glass-card p-6 text-center stat-card">
+            <div class="text-4xl font-black text-purple-400 mb-2">100%</div>
+            <div class="text-slate-400 text-sm">KPI Hit Rate Monthly</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       SKILLS
+  ============================== -->
+  <section id="skills" class="py-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <div data-aos="fade-up">
+        <span class="font-mono text-purple-400 text-sm tracking-widest">// 02. SKILLS</span>
+        <h2 class="text-4xl font-black text-white mt-2 mb-12">What I Work With</h2>
+      </div>
+
+      <!-- Row 1: 3 cards -->
+      <div class="grid md:grid-cols-3 gap-5 mb-5">
+        <!-- Networking -->
+        <div class="glass-card p-6" data-aos="fade-up" data-aos-delay="0">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-9 h-9 rounded-lg bg-purple-500/20 flex items-center justify-center">
+              <i class="fas fa-network-wired text-purple-400"></i>
+            </div>
+            <h3 class="text-white font-bold">Networking</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="skill-badge">Cisco ASR9000</span>
+            <span class="skill-badge">GPON</span>
+            <span class="skill-badge">VoIP</span>
+            <span class="skill-badge">IPTV</span>
+            <span class="skill-badge">Winbox</span>
+            <span class="skill-badge">The DUDE</span>
+            <span class="skill-badge">GNS3</span>
+            <span class="skill-badge">Packet Tracer</span>
+            <span class="skill-badge">MikroTik</span>
+          </div>
+        </div>
+
+        <!-- Systems & Cloud -->
+        <div class="glass-card p-6" data-aos="fade-up" data-aos-delay="80">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-9 h-9 rounded-lg bg-purple-500/20 flex items-center justify-center">
+              <i class="fas fa-server text-purple-400"></i>
+            </div>
+            <h3 class="text-white font-bold">Systems & Cloud</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="skill-badge">Linux Server</span>
+            <span class="skill-badge">Windows Server</span>
+            <span class="skill-badge">VMware</span>
+            <span class="skill-badge">AWS</span>
+            <span class="skill-badge">DNS/DHCP</span>
+            <span class="skill-badge">Bash</span>
+            <span class="skill-badge">Kali Linux</span>
+            <span class="skill-badge">VLANs</span>
+            <span class="skill-badge">VPN</span>
+          </div>
+        </div>
+
+        <!-- Programming -->
+        <div class="glass-card p-6" data-aos="fade-up" data-aos-delay="160">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-9 h-9 rounded-lg bg-purple-500/20 flex items-center justify-center">
+              <i class="fas fa-code text-purple-400"></i>
+            </div>
+            <h3 class="text-white font-bold">Programming</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="skill-badge skill-highlight">Three.js</span>
+            <span class="skill-badge skill-highlight">Vite</span>
+            <span class="skill-badge">JavaScript</span>
+            <span class="skill-badge">PHP</span>
+            <span class="skill-badge">Python</span>
+            <span class="skill-badge">SQL</span>
+            <span class="skill-badge">C/C++</span>
+            <span class="skill-badge">HTML/CSS</span>
+            <span class="skill-badge">Swift</span>
+            <span class="skill-badge">PowerShell</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 2: 2 cards -->
+      <div class="grid md:grid-cols-2 gap-5">
+        <!-- 3D & Creative -->
+        <div class="glass-card p-6" data-aos="fade-up" data-aos-delay="0">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-9 h-9 rounded-lg bg-purple-500/20 flex items-center justify-center">
+              <i class="fas fa-cube text-purple-400"></i>
+            </div>
+            <h3 class="text-white font-bold">3D & Creative</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="skill-badge skill-highlight">Blender</span>
+            <span class="skill-badge skill-highlight">Adobe Photoshop</span>
+            <span class="skill-badge">Adobe Illustrator</span>
+            <span class="skill-badge">GLB / 3D Assets</span>
+            <span class="skill-badge">UI/UX Design</span>
+            <span class="skill-badge">Adobe CC</span>
+            <span class="skill-badge">WebGL</span>
+          </div>
+        </div>
+
+        <!-- Design & Web -->
+        <div class="glass-card p-6" data-aos="fade-up" data-aos-delay="80">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-9 h-9 rounded-lg bg-purple-500/20 flex items-center justify-center">
+              <i class="fas fa-palette text-purple-400"></i>
+            </div>
+            <h3 class="text-white font-bold">Design & Web</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="skill-badge">Responsive Web Design</span>
+            <span class="skill-badge">Figma</span>
+            <span class="skill-badge">UI Layout</span>
+            <span class="skill-badge">Game Feel & VFX</span>
+            <span class="skill-badge">Color Theory</span>
+            <span class="skill-badge">CSS Animation</span>
+            <span class="skill-badge">Node.js</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       EXPERIENCE
+  ============================== -->
+  <section id="experience" class="py-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <div data-aos="fade-up">
+        <span class="font-mono text-purple-400 text-sm tracking-widest">// 03. EXPERIENCE</span>
+        <h2 class="text-4xl font-black text-white mt-2 mb-12">Work History</h2>
+      </div>
+
+      <div class="timeline-wrapper">
+        <div class="timeline-line"></div>
+
+        <!-- Orion TSA -->
+        <div class="timeline-entry" data-aos="fade-right" data-aos-delay="0">
+          <div class="timeline-dot"></div>
+          <div class="glass-card p-6 ml-12 md:ml-16">
+            <div class="flex flex-wrap items-start justify-between gap-3 mb-4">
+              <div>
+                <h3 class="text-white text-lg font-bold">Technical Support Administrator</h3>
+                <p class="text-purple-400 font-semibold text-sm mt-0.5">Orion Telekom · Belgrade, Serbia</p>
+              </div>
+              <span class="font-mono text-xs text-slate-500 bg-purple-950/60 px-3 py-1 rounded-full whitespace-nowrap">
+                May 2024 – Jun 2025
+              </span>
+            </div>
+            <ul class="text-slate-400 text-sm space-y-2 leading-relaxed">
+              <li class="flex gap-2"><span class="text-purple-500 mt-0.5 flex-shrink-0">▸</span>High-level technical support for ADSL, WiFi, GPON, VoIP and IPTV services via phone and Kayako ticketing</li>
+              <li class="flex gap-2"><span class="text-purple-500 mt-0.5 flex-shrink-0">▸</span>Monitored real-time ISP infrastructure using The DUDE and Winbox; exceeded department KPIs every month</li>
+              <li class="flex gap-2"><span class="text-purple-500 mt-0.5 flex-shrink-0">▸</span>Collaborated with engineering teams to design, verify, and secure network routes and configurations</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Orion NOC -->
+        <div class="timeline-entry" data-aos="fade-right" data-aos-delay="80">
+          <div class="timeline-dot"></div>
+          <div class="glass-card p-6 ml-12 md:ml-16">
+            <div class="flex flex-wrap items-start justify-between gap-3 mb-4">
+              <div>
+                <h3 class="text-white text-lg font-bold">NOC L1 &amp; Core Team Intern</h3>
+                <p class="text-purple-400 font-semibold text-sm mt-0.5">Orion Telekom · Belgrade, Serbia</p>
+              </div>
+              <span class="font-mono text-xs text-slate-500 bg-purple-950/60 px-3 py-1 rounded-full whitespace-nowrap">
+                Mar 2024 – May 2024
+              </span>
+            </div>
+            <ul class="text-slate-400 text-sm space-y-2 leading-relaxed">
+              <li class="flex gap-2"><span class="text-purple-500 mt-0.5 flex-shrink-0">▸</span>Monitored core ISP infrastructure and gained hands-on experience with Cisco ASR9000 backbone routers</li>
+              <li class="flex gap-2"><span class="text-purple-500 mt-0.5 flex-shrink-0">▸</span>Gained deep exposure to backbone peering and core endpoints in a high-concurrency ISP environment</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Eurosoles -->
+        <div class="timeline-entry" data-aos="fade-right" data-aos-delay="160">
+          <div class="timeline-dot"></div>
+          <div class="glass-card p-6 ml-12 md:ml-16">
+            <div class="flex flex-wrap items-start justify-between gap-3 mb-4">
+              <div>
+                <h3 class="text-white text-lg font-bold">Electrical Engineer &amp; Network Coordinator</h3>
+                <p class="text-purple-400 font-semibold text-sm mt-0.5">Eurosoles · Debeljaa, Serbia</p>
+              </div>
+              <span class="font-mono text-xs text-slate-500 bg-purple-950/60 px-3 py-1 rounded-full whitespace-nowrap">
+                Jul 2021 – Mar 2024
+              </span>
+            </div>
+            <ul class="text-slate-400 text-sm space-y-2 leading-relaxed">
+              <li class="flex gap-2"><span class="text-purple-500 mt-0.5 flex-shrink-0">▸</span>Architected and maintained the company's internal network infrastructure from the ground up</li>
+              <li class="flex gap-2"><span class="text-purple-500 mt-0.5 flex-shrink-0">▸</span>Built and maintained semi-automatic polyurethane manufacturing systems with integrated software controllers</li>
+              <li class="flex gap-2"><span class="text-purple-500 mt-0.5 flex-shrink-0">▸</span>Optimized hardware procurement and system lifecycle management — reduced operational downtime by 15%</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       PROJECTS
+  ============================== -->
+  <section id="projects" class="py-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <div data-aos="fade-up">
+        <span class="font-mono text-purple-400 text-sm tracking-widest">// 04. PROJECTS</span>
+        <h2 class="text-4xl font-black text-white mt-2 mb-12">What I've Built</h2>
+      </div>
+
+      <!-- FEATURED: Fish of Fortune -->
+      <div class="glass-card overflow-hidden mb-6 featured-project-card" data-aos="fade-up">
+        <div class="grid md:grid-cols-2">
+          <!-- Image -->
+          <div class="project-img-wrap relative h-64 md:h-auto">
+            <img src="Assets/fishOfFortune.png"
+                 alt="Fish of Fortune — Three.js web game screenshot showing grid gameplay with underwater aesthetic"
+                 class="w-full h-full object-cover" />
+            <div class="featured-badge">⭐ Featured</div>
+          </div>
+          <!-- Content -->
+          <div class="p-8 md:p-10 flex flex-col justify-center">
+            <div class="font-mono text-xs text-purple-400/80 tracking-widest mb-3">SETT.AI HOME ASSIGNMENT</div>
+            <h3 class="text-white text-2xl font-black mb-4">Fish of Fortune — Three.js Game</h3>
+            <p class="text-slate-400 leading-relaxed mb-6 text-sm">
+              Recreated reference gameplay as a fully functional web-based 3D game using Three.js and Vite. Delivered three iterative versions: v1 primitive prototype with core mechanics and win state, v2 with refined input responsiveness and easing curves, v3 with full VFX juice, particle feedback, and polished win transition. Reskinned to Fish of Fortune underwater aesthetic using Blender GLB assets and Photoshop UI exports. All iterations documented in README with exact values tuned.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="skill-badge skill-highlight">Three.js</span>
+              <span class="skill-badge skill-highlight">Vite</span>
+              <span class="skill-badge skill-highlight">Blender</span>
+              <span class="skill-badge skill-highlight">Photoshop</span>
+              <span class="skill-badge">JavaScript</span>
+              <span class="skill-badge">Node.js</span>
+              <span class="skill-badge">WebGL</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2×2 grid -->
+      <div class="grid md:grid-cols-2 gap-5">
+
+        <!-- Orion -->
+        <div class="glass-card overflow-hidden project-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="project-img-wrap h-52">
+            <img src="Assets/Orion/image.png"
+                 alt="Orion Data Management System — statistics dashboard with ISP issue tracking"
+                 class="w-full h-full object-cover" />
+          </div>
+          <div class="p-6">
+            <h3 class="text-white text-lg font-bold mb-2">Orion Data Management System</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-4">
+              Full-stack ISP technical issue tracking system with multi-level cascading forms, AJAX-driven dynamic menus, admin dashboard, real-time stats/reporting, and role-based authentication. Deployed on AWS Linux VPS.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="skill-badge">PHP</span>
+              <span class="skill-badge">MySQL</span>
+              <span class="skill-badge">AWS</span>
+              <span class="skill-badge">Linux</span>
+              <span class="skill-badge">JavaScript</span>
+              <span class="skill-badge">Adobe CC</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Virtual Garden -->
+        <div class="glass-card overflow-hidden project-card" data-aos="fade-up" data-aos-delay="80">
+          <div class="project-img-wrap h-52">
+            <img src="Assets/Virtual%20garden/Screenshot%202026-06-23%20123016.png"
+                 alt="Virtual Greenhouse website — responsive plant showcase with hero slider"
+                 class="w-full h-full object-cover" />
+          </div>
+          <div class="p-6">
+            <h3 class="text-white text-lg font-bold mb-2">Virtual Greenhouse</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-4">
+              Responsive educational website showcasing 5 exotic plant species with a hero slider, dropdown navigation, detailed plant info cards, and social media integration. Pure HTML/CSS front-end work.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="skill-badge">HTML5</span>
+              <span class="skill-badge">CSS3</span>
+              <span class="skill-badge">PHP</span>
+              <span class="skill-badge">Responsive Design</span>
+              <span class="skill-badge">Font Awesome</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Thesis -->
+        <div class="glass-card overflow-hidden project-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="project-img-wrap h-52">
+            <img src="Assets/Thesis/Screenshot%202026-06-23%20123726.png"
+                 alt="Brute Force Vulnerability Assessment thesis — documentation screenshot"
+                 class="w-full h-full object-cover" />
+          </div>
+          <div class="p-6">
+            <h3 class="text-white text-lg font-bold mb-2">Brute Force Vulnerability Assessment</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-4">
+              Bachelor's thesis — in-depth vulnerability analysis of device exposure to brute force attacks using Kali Linux. Covers attack classification, password entropy math, and countermeasures including 2FA, lockouts, and CAPTCHA.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="skill-badge">Kali Linux</span>
+              <span class="skill-badge">Python</span>
+              <span class="skill-badge">Security Research</span>
+              <span class="skill-badge">InfoSec</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Home Lab -->
+        <div class="glass-card overflow-hidden project-card" data-aos="fade-up" data-aos-delay="80">
+          <div class="project-lab-placeholder h-52 flex items-center justify-center">
+            <div class="text-center opacity-70">
+              <i class="fas fa-microchip text-5xl text-purple-400 mb-3 block"></i>
+              <p class="font-mono text-purple-400/60 text-xs tracking-widest">lab.local · always-on</p>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-white text-lg font-bold mb-2">Advanced Home Lab</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-4">
+              Private enterprise simulation for white-hat security testing and CCNA preparation. Configured isolated VLANs, VPN nodes, and VMware-based server clusters. Includes automation scripting and network monitoring tools.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="skill-badge">Raspberry Pi</span>
+              <span class="skill-badge">VMware</span>
+              <span class="skill-badge">VLANs</span>
+              <span class="skill-badge">VPN</span>
+              <span class="skill-badge">Bash</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       EDUCATION
+  ============================== -->
+  <section id="education" class="py-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <div data-aos="fade-up">
+        <span class="font-mono text-purple-400 text-sm tracking-widest">// 05. EDUCATION</span>
+        <h2 class="text-4xl font-black text-white mt-2 mb-12">Academic Background</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-5">
+        <!-- MSc -->
+        <div class="glass-card p-8" data-aos="fade-right">
+          <div class="flex items-start gap-4 mb-5">
+            <div class="w-12 h-12 rounded-xl bg-purple-500/20 flex items-center justify-center flex-shrink-0">
+              <i class="fas fa-graduation-cap text-purple-400 text-xl"></i>
+            </div>
+            <div>
+              <span class="font-mono text-xs text-purple-400 tracking-widest">Oct 2025 – Present</span>
+              <h3 class="text-white text-lg font-bold mt-1">MSc — Network and Computer Technologies</h3>
+              <p class="text-purple-400 font-semibold text-sm">ATUSS, Belgrade</p>
+            </div>
+          </div>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Advanced applied engineering, high-uptime system administration, and modern network design. Focus on enterprise-grade infrastructure and emerging network protocols.
+          </p>
+        </div>
+
+        <!-- BSc -->
+        <div class="glass-card p-8" data-aos="fade-left">
+          <div class="flex items-start gap-4 mb-5">
+            <div class="w-12 h-12 rounded-xl bg-purple-500/20 flex items-center justify-center flex-shrink-0">
+              <i class="fas fa-university text-purple-400 text-xl"></i>
+            </div>
+            <div>
+              <span class="font-mono text-xs text-purple-400 tracking-widest">Oct 2021 – 2025</span>
+              <h3 class="text-white text-lg font-bold mt-1">BSc — Communication Technologies</h3>
+              <p class="text-purple-400 font-semibold text-sm">ATUSS, Belgrade</p>
+            </div>
+          </div>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Computer Networks (TCP/IP), Security of Information Systems, VMware, and Software Engineering. Languages: Swift, Python, C++, Java, SQL, HTML/CSS, PHP, Bash.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       CONTACT
+  ============================== -->
+  <section id="contact" class="py-24">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <div data-aos="fade-up">
+        <span class="font-mono text-purple-400 text-sm tracking-widest">// 06. CONTACT</span>
+        <h2 class="text-4xl font-black text-white mt-2 mb-4">Get In Touch</h2>
+        <p class="text-slate-400 text-lg mb-12">EU Citizen &middot; Open to remote &amp; relocation</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 gap-4 mb-12">
+        <a href="mailto:maximilian.popovic@gmail.com"
+           class="glass-card p-5 flex items-center gap-4 group no-underline"
+           data-aos="fade-up" data-aos-delay="0">
+          <div class="w-10 h-10 rounded-lg bg-purple-500/15 flex items-center justify-center flex-shrink-0 group-hover:bg-purple-500/35 transition-colors">
+            <i class="fas fa-envelope text-purple-400"></i>
+          </div>
+          <div class="text-left">
+            <div class="text-xs text-slate-500 mb-1">Email</div>
+            <div class="text-white text-sm font-semibold">maximilian.popovic@gmail.com</div>
+          </div>
+        </a>
+
+        <a href="tel:+381638816823"
+           class="glass-card p-5 flex items-center gap-4 group no-underline"
+           data-aos="fade-up" data-aos-delay="50">
+          <div class="w-10 h-10 rounded-lg bg-purple-500/15 flex items-center justify-center flex-shrink-0 group-hover:bg-purple-500/35 transition-colors">
+            <i class="fas fa-phone text-purple-400"></i>
+          </div>
+          <div class="text-left">
+            <div class="text-xs text-slate-500 mb-1">Phone</div>
+            <div class="text-white text-sm font-semibold">+381.63.8816823</div>
+          </div>
+        </a>
+
+        <a href="https://www.linkedin.com/in/maksimilian-popovic-871b9022a/" target="_blank" rel="noopener"
+           class="glass-card p-5 flex items-center gap-4 group no-underline"
+           data-aos="fade-up" data-aos-delay="100">
+          <div class="w-10 h-10 rounded-lg bg-purple-500/15 flex items-center justify-center flex-shrink-0 group-hover:bg-purple-500/35 transition-colors">
+            <i class="fab fa-linkedin text-purple-400"></i>
+          </div>
+          <div class="text-left">
+            <div class="text-xs text-slate-500 mb-1">LinkedIn</div>
+            <div class="text-white text-sm font-semibold">maksimilian-popovic</div>
+          </div>
+        </a>
+
+        <a href="https://github.com/maksimivian" target="_blank" rel="noopener"
+           class="glass-card p-5 flex items-center gap-4 group no-underline"
+           data-aos="fade-up" data-aos-delay="150">
+          <div class="w-10 h-10 rounded-lg bg-purple-500/15 flex items-center justify-center flex-shrink-0 group-hover:bg-purple-500/35 transition-colors">
+            <i class="fab fa-github text-purple-400"></i>
+          </div>
+          <div class="text-left">
+            <div class="text-xs text-slate-500 mb-1">GitHub</div>
+            <div class="text-white text-sm font-semibold">maksimivian</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       FOOTER
+  ============================== -->
+  <footer class="border-t border-purple-950/50 py-8">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="font-mono text-slate-600 text-sm">&copy; 2026 Maksimilian Popovic &middot; Built with purpose</p>
+      <div class="flex gap-5">
+        <a href="https://www.linkedin.com/in/maksimilian-popovic-871b9022a/" target="_blank" rel="noopener"
+           class="text-slate-600 hover:text-purple-400 transition-colors" aria-label="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/maksimivian" target="_blank" rel="noopener"
+           class="text-slate-600 hover:text-purple-400 transition-colors" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="mailto:maximilian.popovic@gmail.com"
+           class="text-slate-600 hover:text-purple-400 transition-colors" aria-label="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- AOS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- Custom JS -->
+  <script src="script.js"></script>
+</body>
+</html>
